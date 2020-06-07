@@ -1,0 +1,209 @@
+.containergallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img{
+  transition: all 1s;
+}
+  
+img:hover {
+  transform: scale(1.1)
+}
+
+.image01 {
+	width: 100%
+	height: 100%
+	background-image: url("https://www.trustytails.com/wp-content/uploads/2014/07/NJ-Dog-Beach-300x200-300x200.jpg");
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+}
+
+.image01 article:hover {
+	background-image: url("https://thecatdoctoronline.com/wp-content/uploads/2017/11/persian-cat-300x200.jpg");
+}
+
+
+a.lightbox img {
+
+box-shadow: 0px 0px 16px rgba(0,0,0,.3);
+margin: 12px 12px 12px 12px;
+}
+
+
+
+.lightbox-target {
+position: fixed;
+top: -100%;
+width: 100%;
+background: rgba(0,0,0,.7);
+width: 100%;
+opacity: 0;
+-webkit-transition: opacity .5s ease-in-out;
+-moz-transition: opacity .5s ease-in-out;
+-o-transition: opacity .5s ease-in-out;
+transition: opacity .5s ease-in-out;
+overflow: hidden;
+}
+
+
+.lightbox-target img {
+margin: auto;
+position: absolute;
+top: 0;
+left:0;
+right:0;
+bottom: 0;
+max-height: 0%;
+max-width: 0%;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+box-sizing: border-box;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+
+a.lightbox-close {
+display: block;
+width:50px;
+height:50px;
+box-sizing: border-box;
+background: white;
+color: black;
+text-decoration: none;
+position: absolute;
+top: -80px;
+right: 0;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+
+a.lightbox-close:before {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+
+
+a.lightbox-close:after {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(-45deg);
+-moz-transform:rotate(-45deg);
+-o-transform:rotate(-45deg);
+transform:rotate(-45deg);
+}
+
+
+.lightbox-target:target {
+opacity: 1;
+top: 0;
+bottom: 0;
+}
+
+.lightbox-target:target img {
+max-height: 100%;
+max-width: 100%;
+}
+
+.lightbox-target:target a.lightbox-close {
+top: 0px;
+}
+
+/* CONTACT PAGE */
+
+.container2 {
+  border-radius: 5px;
+  background-color: #bfbec7;
+  padding: 20px;
+  margin: 50px 150px;  
+  justify-content: center;
+}
+
+.container3 {
+  border-radius: 5px;
+  padding: 20px;
+  margin: 50px 150px;  
+  justify-content: center;
+}
+
+.introtext {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+input[type=text], select, textarea {
+  font-family: 'Josefin Sans', sans-serif;
+  width: 100%; 
+  padding: 15px;
+  border: 1px solid #6f7956;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #6f7956;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+input[type=submit]:hover {
+  background-color: #a4a6d6;
+  }
+
+.buttontop {
+    background-color: #d29b66;;
+    justify-content: center;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+}
+
+.buttontop:hover, a:active {
+  background-color: #9b533a;
+  }
+
+.imgmain {
+  opacity: 1;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.imgmain:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}

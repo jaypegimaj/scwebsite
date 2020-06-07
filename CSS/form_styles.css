@@ -1,0 +1,82 @@
+fieldset {
+	border: 1px solid #C00;
+	padding-top: 0.8em;
+	padding-bottom: 1em;
+	padding-left: 1.1em;
+	margin-top: 0.5em;
+	width: 320px;
+	text-align: left;
+	margin-left: 5.5em;
+	margin-bottom: 0.5em;
+}
+legend {
+	font-size: 0.9em;
+	color: #DBD0B1;
+}
+label {
+	display: block;
+	margin-top: 0.3em;
+	color: #800001;
+	font-size: .9em;
+}
+.twoColHybLtHdr #container #mainContent label img {
+	padding: 0px;
+	margin: 0px;
+}
+.twoColHybLtHdr #container #mainContent #form1 fieldset p img {
+	padding: 0px;
+	margin: 0px;
+}
+input, textarea {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #800001;
+	border-right-color: #800001;
+	border-bottom-color: #800001;
+	border-left-color: #800001;
+	background-color: #D9DEE8;
+	width: 25em;
+	font-size: 0.9em;
+	margin-top: 0.2em;
+	margin-right: 0px;
+	margin-bottom: 0.2em;
+	margin-left: 0px;
+	padding-top: 0.1em;
+	padding-right: .1px;
+	padding-bottom: 0.1em;
+	padding-left: .1px;
+}
+textarea {
+	height: 8em;
+}
+fieldset #message {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: .8em;
+	padding-top: .2em;
+	padding-bottom: .2em;
+}
+input#submit {
+	width: 8em;
+	margin-top: .8em;
+	margin-left: 0.8em;
+	font-weight: bold;
+}
+input#clearform {
+	width: 8em;
+	margin-top: .8em;
+	margin-left: .8em;
+	font-weight: bold;
+}
+input:focus, textarea:focus {
+	background-color: #FFFFCE;
+}
+.textfieldInvalidFormatMsg {
+	font-size: 0.8em;
+	font-weight: bold;
+}

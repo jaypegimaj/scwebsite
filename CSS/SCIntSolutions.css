@@ -1,0 +1,423 @@
+@charset "utf-8";
+body {
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+	background-color: white;
+	/*background-image: url(../images/background.gif);*/
+	background-repeat: repeat;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 10pt;
+	margin-top: .6em;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+p {
+	font-family: Muli-Light, sans-serif;
+	font-size: calc(3px + 1vw);
+	margin-bottom: 0.0001px;
+}
+h3 {
+   font-family: 'Josefin Sans', "sans-serif";
+   font-size:calc(6px + 1vw);
+   padding: 0.3em;
+   color: black;
+   text-align: left;
+   justify-content: center;
+}
+h4 {
+   font-family: 'Josefin Sans', "sans-serif";
+   font-size:calc(14px + 1vw);
+   padding: 0.3em;
+   color: black;
+
+   text-align: : center;
+}
+.thrColFixHdr #container {
+	max-width: 100%;
+	min-width: 780px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	background: #FFFFFF;
+	margin: 0 auto;
+	text-align: center; /* this overrides the text-align: center on the body element. */
+}
+.thrColFixHdr #header {
+	background: white;
+
+	  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+}
+.thrColFixHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 1px 10px 1px 5px; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+}
+img.center{
+    text-align:center;
+
+    margin-top: calc(1px + 1vw);
+	margin-right: 0;
+	margin-bottom: calc(1 + 1vw);
+	margin-left: 0;
+	max-width: 50%;
+}
+.thrColFixHdr #container #header p img {
+	text-align: center;
+	margin: 0em;
+}
+.thrColFixHdr #MenuBar {
+	align-items: stretch;
+	height: 30px;
+	/*width: span;*/
+	background-color: white;
+	padding: 0em;
+	margin-top: -0.5em;
+
+}
+.thrColFixHdr #sidebar1 {
+	float: left; /* since this element is floated, a width must be given */
+	width: 155px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	background: #FFE592; /* padding keeps the content of the div away from the edges */
+	margin-left: 72px;
+	padding-top: 15px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+	text-align: center;
+	margin-top: 2px;
+}
+.thrColFixHdr #container #sidebar1 p {
+	color: #933803;
+	padding-top: 1em;
+	padding-right: 0em;
+	padding-bottom: 1.6em;
+	padding-left: 0em;
+	line-height: 1.3em;
+}
+.thrColFixHdr #container #sidebar1 #sidebarPhoto {
+	width: 150px;
+	background-color: #D39E50;
+	padding-bottom: 0.2em;
+	border: thin solid #D39E50;
+	margin-top: 2em;
+}
+.thrColFixHdr #container #sidebar1 #sidebarPhoto p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+	color: #49241B;
+}
+.thrColFixHdr #sidebar2 {
+	float: right; /* since this element is floated, a width must be given */
+	width: 50px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	background: #FFF; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 15px 10px 15px 20px; /* padding keeps the content of the div away from the edges */
+}
+.thrColFixHdr #sidebar3 {
+	float: left; /* since this element is floated, a width must be given */
+	width: 155px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	background: #FFE592; /* padding keeps the content of the div away from the edges */
+	margin-left: 72px;
+	padding-top: 15px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+	text-align: center;
+	margin-top: 2px;
+	height: 475px;
+}
+.thrColFixHdr #container #sidebar3 #sidebarPhoto img {
+	margin-top: 7em;
+	border: thin solid #D39E50;
+}
+.thrColFixHdr #container #sidebar3 p {
+	margin-top: 1.5em;
+	color: #933803;
+	line-height: 1.2em;
+}
+.thrColFixHdr #sidebar4 {
+	float: left; /* since this element is floated, a width must be given */
+	width: 155px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	background: #FFE592; /* padding keeps the content of the div away from the edges */
+	margin-left: 72px;
+	text-align: center;
+	margin-top: 2px;
+	padding: 15px 10px;
+	height: 475px;
+	color: #933803;
+}
+.thrColFixHdr #container #sidebar4 #sidebarPhoto img {
+	border: 1px solid #D39E50;
+	margin-top: 7em;
+	margin-bottom: 1em;
+}
+.thrColFixHdr #mainContent {
+	margin-top: 0;
+	margin-right: 64px;
+	margin-bottom: 0;
+	margin-left: 230px;
+	padding-top: 1em;
+	padding-right: 10px;
+	padding-bottom: 0;
+	padding-left: 10px;
+}
+.thrColFixHdr #container #mainContent p {
+	line-height: 1.35em;
+	font-size: 12.9px;
+}
+.thrColFixHdr #container #mainContent #welcome p {
+	padding-left: 1.2em;
+	padding-top: 1em;
+	line-height: 1.35em;
+	text-align: justify;
+	font-size: 12.9px;
+}
+.thrColFixHdr #container #mainContent h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: underline;
+	font-size: 12.9px;
+	padding-top: 2em;
+	font-weight: 400;
+	color: #933803;
+}
+.thrColFixHdr #container #mainContent ul li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	list-style-position: inside;
+	list-style-type: disc;
+	margin-left: 0.5em;
+	color: #933803;
+	margin-top: 0.1em;
+}
+.thrColFixHdr #container #mainContent #services p {
+	margin-top: 1em;
+	font-size: 12.9px;
+	line-height: 1.35em;
+}
+.thrColFixHdr #container #mainContent #services .thrColFixHdr {
+	font-size: 12.9px;
+	line-height: 1.35em;
+}
+.thrColFixHdr #container #mainContent #services h2 {
+	padding-bottom: .5em;
+}
+.thrColFixHdr #container #mainContent #services ul li {
+	font-size: 12.9px;
+	line-height: 1.35em;
+	color: #933803;
+}
+.thrColFixHdr #container #mainContent #services ul p {
+	margin-left: 1em;
+	margin-bottom: .5em;
+}
+.thrColFixHdr #container #mainContent #services .despkg ul li {
+	padding-top: .5em;
+}
+.thrColFixHdr #container #mainContent #process .prochead p {
+	font-size: 12.9px;
+	line-height: 1.35em;
+	margin-top: 0.2em;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-left: 0.5em;
+	padding-top: 1em;
+	text-align: justify;
+}
+.thrColFixHdr #container #mainContent #process p {
+	font-size: 12.9px;
+	line-height: 1.35em;
+	margin-top: 0.2em;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-left: 0.5em;
+	padding-top: 1em;
+	text-align: justify;
+}
+.thrColFixHdr #container #mainContent #process .process ul li {
+	font-size: 1em;
+	list-style-position: inside;
+	list-style-type: disc;
+	margin-left: 2em;
+}
+.thrColFixHdr #container #mainContent #testimonials p {
+	font-size: 12px;
+	color: #000;
+}
+.thrColFixHdr #services {
+	padding-left: 1.4em;
+	margin-top: 0em;
+	font-size: 12.9px;
+	line-height: 1.35em;
+}
+.thrColFixHdr #process {
+	padding-left: 1.4em;
+	margin-top: 0em;
+	font-size: 12.9px;
+	line-height: 1.35em;
+}
+.thrColFixHdr #testimonials {
+	padding-left: 1.4em;
+	margin-top: 0em;
+	font-size: 12.9px;
+	line-height: 1.35em;
+}
+.thrColFixHdr #gallery {
+	margin-right: 1em;
+	margin-left: 19em;
+}
+.imgLeftHalf {
+	text-align: left;
+	margin-top: 0.2em;
+	margin-bottom: .2em;
+}
+.imgRithtHalf {
+	text-align: right;
+	border-left-width: .3em;
+	border-left-style: solid;
+	border-left-color: #FFF;
+	margin-top: .2em;
+	margin-bottom: .2em;
+}
+.thrColFixHdr #container #contact h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #933803;
+	margin-top: 2em;
+}
+.thrColFixHdr #container #gallery h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #933803;
+	margin-top: 2em;
+}
+.thrColFixHdr #container #contact p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000;
+	margin-top: 0.2em;
+}
+.signed {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: bold;
+	margin-top: 1.5em;
+}
+.centered {
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	color: #000;
+}
+.indent {
+	padding-left: 2em;
+}
+.fulltitle {
+	text-align: center;
+	font-weight: 400;
+	font-size: 14px;
+	background-color: #d39e50;
+	color: #000;
+	margin-top: .3em;
+	margin-bottom: 0.2em;
+	padding-top: 0.1em;
+	padding-bottom: 0.3em;
+	padding-left: 2em;
+}
+.halfLeftTitle {
+	text-align: left;
+	font-weight: 400;
+	font-size: 14px;
+	background-color: #d39e50;
+	color: #000;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	padding-top: 0.1em;
+	padding-bottom: 0.3em;
+	width: 325px;
+	float: left;
+	padding-left: 0.4em;
+}
+.halfRightTitle {
+	text-align: left;
+	font-weight: 400;
+	font-size: 14px;
+	background-color: #d39e50;
+	color: #000;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	padding-top: 0.1em;
+	padding-bottom: 0.3em;
+	width: 325px;
+	float: right;
+	padding-left: 0.4em;
+	margin-left: .3em;
+}
+.thrColFixHdr #contact {
+	margin-right: 12em;
+	margin-left: 12em;
+	text-align: center;
+}
+.thrColFixHdr #contact #zillow {
+	margin-top: 3em;
+	text-align: center;
+}
+.thrColFixHdr #container #emailthanks h1  {
+	font-size: 1.3em;
+	color: #933803;
+	text-align: center;
+	margin-top: 2em;
+}
+.thrColFixHdr #container #emailthanks h2  {
+	font-size: 1.3em;
+	text-align: center;
+	margin-top: 1.5em;
+	background-color: #FFDE7E;
+	padding-top: .3em;
+	padding-bottom: .3em;
+	margin-bottom: 1.5em;
+}
+.thrColFixHdr #container #emailthanks h3  {
+	font-size: 1.1em;
+	color: #000;
+	text-align: center;
+	margin-top: 1.5em;
+	font-style: italic;
+	margin-bottom: 1.5em;
+}
+.thrColFixHdr #container #emailthanks p  {
+	font-size: 1em;
+	text-align: center;
+	margin-top: .5em;
+}
+.thrColFixHdr #footer {
+	padding: 0 10px 0 20px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:	#202020;
+}
+.thrColFixHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+	color: #FFF;
+	text-align: center;
+	font-size: 10px;
+}
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}

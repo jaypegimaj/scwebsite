@@ -1,0 +1,74 @@
+html { 
+  background: url(Jarvis5.jpg), no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+body {
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+	background-color: transparent;
+	/*background-image: url(../images/background.gif);*/
+	background-repeat: repeat;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 10pt;
+	margin-top: .6em;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+
+.contact-title{
+	margin-top:100px;
+	color:;
+	text-transform: uppercase;
+	transition: all 4s ease-in-out;
+}
+
+.contact-title h1{
+	font-size:32px;
+	line-height: 10px;
+}
+
+.contact-title h2{
+	font-size:16px;
+}
+
+form{
+	margin-top:50px;
+	transition:all 4s ease-in-out;
+	}
+
+
+.form-control{
+	width:600px;
+	border:none;
+	background:transparent;
+	outline:none;
+	border-bottom: 1px solid gray;
+	color:#fff;
+	font-size:18px;
+	margin-bottom: 16px;
+}
+
+input{
+	height:45px;
+}
+
+
+form.submit{
+	background:#fff;
+	border-color:transparent;
+	color: #e8a52a;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing:2px;
+	height: 50px;
+	margin-top:;
+
+}

@@ -1,0 +1,200 @@
+<?
+/*
+##############################################################################
+# PLEASE DO NOT REMOVE THIS HEADER!!!
+#
+# Formmail.php - Xtroncorp.com
+# Date - 06/07/2004
+##############################################################################
+#
+# This program will email the contact information 
+# submitted thru the contact.html from the website
+# http://www.scinteriorsolutions.com to the $recipient mentioned
+# in the $recipient variable.
+#
+##############################################################################
+*/
+
+$recipient = "scInteriorSolutions@yahoo.com"; // To whom the mail has to be sent.
+//$recipient = "harrisc@microsoft.com"; // To whom the mail has to be sent.
+$subject = "Contact form submission from scinteriorsolutions.com"; // Mail Subject Here
+
+//Get variables and values
+$get_name = $HTTP_POST_VARS['Name'];
+$get_email = $HTTP_POST_VARS['email'];
+$get_phone = $HTTP_POST_VARS['phone'];
+$get_comments = $HTTP_POST_VARS['comments'];
+
+
+// Design the mail format
+
+$content = "
+Below is the details submitted in the contact form from scinteriorsolutions.com
+Name: $get_name
+Email: $get_email 
+Phone: $get_phone;
+Comments: $get_comments
+";
+
+// Mail the content with designed format
+
+   $ob = "----=_OuterBoundary_000";
+   $ib = "----=_InnerBoundery_001";
+   
+   //$headers  = "MIME-Version: 1.0\r\n"; 
+   $headers = "From: webmaster@scinteriorsolutions.com\n"; 
+   $headers .= "To: ".$recipient."\n"; 
+   $headers .= "Reply-To: ".$get_email."\n";
+   //$headers .= "X-Priority: 1\n"; 
+   //$headers .= "X-Mailer: DT Formmail".VERSION."\n"; 
+   //$headers .= "Content-Type: multipart/mixed;\n\tboundary=\"".$ob."\"\n";
+   
+          
+   //$message  = "This is a multi-part message in MIME format.\n";
+   //$message .= "\n--".$ob."\n";
+   //$message .= "Content-Type: multipart/alternative;\n\tboundary=\"".$ib."\"\n\n";
+   //$message .= "\n--".$ib."\n";
+   //$message .= "Content-Type: text/html;\ncharset=iso-8859-15\n";
+   //$message .= "Content-Transfer-Encoding: quoted-printable\n\n";
+   $message = $content."\n\n";
+   //$message .= "\n--".$ib."--\n";
+   //$message .= "\n--".$ob."--\n";
+
+
+mail($recipient, $subject, $message, $headers);
+
+?>
+
+<html>
+
+<!-- #BeginTemplate "scinteriorsolutions.dwt" -->
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Mail - Susan Clouse Interior Solutions</title>
+<style>
+<!--
+p.MsoBodyText
+	{margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Lucida Sans Unicode";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+ p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+<script language="JavaScript">
+<!--
+function FP_preloadImgs() {//v1.0
+ var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
+ for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
+}
+
+function FP_swapImg() {//v1.0
+ var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
+ n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
+ elm.$src=elm.src; elm.src=args[n+1]; } }
+}
+
+function FP_getObjectByID(id,o) {//v1.0
+ var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
+ else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
+ if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
+ for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
+ f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ return null;
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_validateForm() { //v4.0
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+        if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+      } else if (test!='R') {
+        if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (val<min || max<val) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+  } if (errors) alert('The following error(s) occurred:\n'+errors);
+  document.MM_returnValue = (errors == '');
+}
+// -->
+</script>
+</head>
+
+<body background="images/background.gif" onload="FP_preloadImgs(/*url*/'images/buttons/buttonC.jpg',/*url*/'images/buttons/buttonD.jpg',/*url*/'images/buttons/buttonF.jpg',/*url*/'images/buttons/button10.jpg',/*url*/'images/buttons/button15.jpg',/*url*/'images/buttons/button16.jpg',/*url*/'images/buttons/button18.jpg',/*url*/'images/buttons/button19.jpg',/*url*/'images/buttons/button7.jpg',/*url*/'images/buttons/button8.jpg',/*url*/'images/buttons/buttonA.jpg',/*url*/'images/buttons/buttonB1.jpg')" vlink="#E7D56D" link="#E7D56D">
+
+<div align="center">
+<table bgcolor="white" width="800" cellpadding="0" cellspacing="0" border="0">
+<tr>
+	<td bgcolor="#49241B" colspan="3">
+	<font face="Arial" size="2" color="#FFFFFF">&nbsp;SCInteriorSolutions.com -
+	<i><b>Interior Design &amp; Kitchen and Bath Design</b></i></font></td></tr>
+<tr><td colspan="3">
+	<a name="pagetop">
+	<img border="0" src="images/banner.jpg" width="800" height="110"></a></td></tr>
+<tr>
+	<td bgcolor="#933803" colspan="3">
+	<p align="left"><a href="index.html">
+	<img border="0" id="img1" src="images/buttons/buttonB.jpg" height="25" width="100" alt="Home" onmouseover="FP_swapImg(1,0,/*id*/'img1',/*url*/'images/buttons/buttonC.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img1',/*url*/'images/buttons/buttonB.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img1',/*url*/'images/buttons/buttonD.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img1',/*url*/'images/buttons/buttonC.jpg')" fp-style="fp-btn: Metal Tab 4; fp-bgcolor: #993300; fp-proportional: 0" fp-title="Home"></a><a href="services.html"><img border="0" id="img2" src="images/buttons/buttonE.jpg" height="25" width="100" alt="Services" onmouseover="FP_swapImg(1,0,/*id*/'img2',/*url*/'images/buttons/buttonF.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img2',/*url*/'images/buttons/buttonE.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img2',/*url*/'images/buttons/button10.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img2',/*url*/'images/buttons/buttonF.jpg')" fp-style="fp-btn: Metal Tab 4; fp-bgcolor: #993300; fp-proportional: 0" fp-title="Services"></a><a href="photogallery.html"><img border="0" id="img5" src="images/buttons/button17.jpg" height="25" width="100" alt="Photo Gallery" onmouseover="FP_swapImg(1,0,/*id*/'img5',/*url*/'images/buttons/button18.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img5',/*url*/'images/buttons/button17.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img5',/*url*/'images/buttons/button19.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img5',/*url*/'images/buttons/button18.jpg')" fp-style="fp-btn: Metal Tab 4; fp-bgcolor: #993300; fp-proportional: 0" fp-title="Photo Gallery"></a><a href="contact.html"><img border="0" id="img7" src="images/buttons/button9.jpg" height="25" width="100" alt="Contact" onmouseover="FP_swapImg(1,0,/*id*/'img7',/*url*/'images/buttons/buttonA.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img7',/*url*/'images/buttons/button9.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img7',/*url*/'images/buttons/buttonB1.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img7',/*url*/'images/buttons/buttonA.jpg')" fp-style="fp-btn: Metal Tab 4; fp-bgcolor: #933803; fp-proportional: 0" fp-title="Contact"></a></td></tr>
+<tr>
+	<td width="70" valign="top">
+	<p class="MsoBodyText3" style="margin-left:0in">&nbsp;</p>
+	</td>
+	<td width="660"><!-- #BeginEditable "Content" -->
+	<p class="MsoBodyText3" style="margin-left:0in">&nbsp;</p>
+	<p class="MsoBodyText3" style="margin-left:0in" align="center"><b>
+	<font face="Arial" color="#933803">Susan Clouse Interior Solutions</font><font size="2" face="Arial"><br>
+	</font></b><font size="2" face="Arial">Phone:<b> </b>925-785-5262<b><br>
+	</b>Email:<font color="#933803"><b> </b></font><b>
+	<a href="mailto:scInteriorsolutions@yahoo.com"><font color="#933803">
+	scinteriorsolutions@yahoo.com</font></a></b></font></p>
+	<table bgcolor="#FFDE7E" border="0" width="100%" id="table1">
+		<tr>
+			<td>
+			<p class="MsoBodyText3" style="margin-left:0in" align="center">
+			<font size="2" face="Arial">Thanks for your submission. We will 
+			contact you soon.</font></p></td>
+		</tr>
+	</table>
+	<p class="MsoBodyText3" style="margin-left:0in" align="center">
+	<font size="2" face="Arial">- <b><i>Susan Clouse Interior Solutions</i></b></font></p>
+	<p class="MsoBodyText3" style="margin-left:0in" align="center">&nbsp;</p><!-- #EndEditable -->
+	</td>
+	<td width="70">&nbsp;</td></tr>
+<tr>
+	<td bgcolor="#49241B" colspan="3">
+	<p align="center"><span style="font-family: Arial">
+	<b>
+	<font size="2" color="#FFD560"><a href="index.html">Home</a> </font>
+	<font size="2" color="#FFFFFF">|</font><font size="2" color="#FFD560">
+	<a href="services.html">Services</a> </font><font size="2" color="#FFFFFF">|</font><font size="2" color="#FFD560">
+	<a href="photogallery.html">Photo Gallery</a> </font>
+	<font size="2" color="#FFFFFF">
+	|</font></b><font size="2" color="#FFD560"><b> <a href="contact.html">
+	Contact</a></b></font><font size="2" color="#FFD560"><br>
+	</font><font size="1" color="#FFFFFF">All Rights Reserved. Copyright scinteriorsolutions.com 2005</font></span></td></tr>
+</table>
+</div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

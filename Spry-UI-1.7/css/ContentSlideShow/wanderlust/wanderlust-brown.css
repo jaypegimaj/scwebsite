@@ -1,0 +1,261 @@
+@charset "utf-8";
+
+/* wanderlust-brown.css - version 0.3 - Spry Pre-Release 1.7 */
+
+/* Copyright (c) 2010. Adobe Systems Incorporated. All rights reserved. */
+
+/* The original intent of this design was to have CSS3 rounded corners around the entire
+ * widget, but browser differences made it very hard to implement this because some browsers
+ * clip background images so that they stay within the defined border-radius of the container
+ * and allow you to round the corners of content images, and some don't. For
+ * now, we've decided to disable CSS3 rounded corners for all browsers except webkit based
+ * browsers.
+ */
+ 
+.WLBSlideShow {
+	position: relative;
+	width: 780px;
+	padding: 0;
+	color: white;
+	border: solid 1px #39312e;
+	/* -moz-border-radius: 7px; */
+	-webkit-border-radius: 7px;
+	background-color: #491e16;
+	-moz-box-shadow: 5px 5px 10px gray;
+	-webkit-box-shadow: 5px 5px 10px gray;
+	box-shadow: 5px 5px 10px gray;
+	font-family: Arial, Verdana, Geneva, sans-serif;
+	font-weight: normal;
+	font-size: 11px;
+	margin-top: 10px;
+	margin-left: 8px;
+}
+
+.WLBSlideShow .SSClip {
+	position: relative;
+	overflow: hidden;
+	height: 296px;
+	margin: 0;
+	padding: 0;
+	border-bottom: solid 1px #39312e;
+}
+
+.WLBSlideShow .SSView {
+	height: 296px;
+	margin: 0;
+	padding: 0;
+}
+
+.WLBSlideShow .SSSlide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 296px;
+	z-index: 0;
+}
+
+.WLBSlideShow .SSSlideVisible {
+	z-index: 1;
+}
+
+.WLBSlideShow .SSFirstButton, .WLBSlideShow .SSLastButton, .WLBSlideShow .SSPlayButton, .WLBSlideShow .SSSlideCount {
+	display: none;
+}
+
+.WLBSlideShow .SSPreviousButton {
+	position: absolute;
+	z-index: 5;
+	bottom: 8px;
+	right: 142px;
+}
+
+.WLBSlideShow .SSNextButton {
+	position: absolute;
+	z-index: 5;
+	bottom: 8px;
+	right: 11px;
+}
+
+.WLBSlideShow .SSPreviousButton {
+	width: 15px;
+	height: 15px;
+	background-image: url(images/slideshow-controls.png);
+	background-position: 0 -30px;
+	background-repeat: no-repeat;
+	text-indent: -10000em;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+}
+
+.WLBSlideShow .SSPreviousButtonHover {
+	background-position: -60px -30px;
+}
+
+.WLBSlideShow .SSPreviousButtonDown {
+}
+
+.WLBSlideShow .SSPreviousButtonDisabled {
+}
+
+.WLBSlideShow .SSNextButton {
+	width: 15px;
+	height: 15px;
+	background-image: url(images/slideshow-controls.png);
+	background-position: -30px -30px;
+	background-repeat: no-repeat;
+	text-indent: -10000em;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+}
+
+.WLBSlideShow .SSNextButtonHover {
+	background-position: -90px -30px;
+}
+
+.WLBSlideShow .SSNextButtonDown {
+}
+
+.WLBSlideShow .SSNextButtonDisabled {
+}
+
+.WLBSlideShow .SSSlideLinks {
+	position: absolute;
+	overflow: hidden;
+	bottom: 4px;
+	right: 30px;
+	z-index: 5;
+}
+
+.WLBSlideShow a.SSSlideLink {
+	display: block;
+	float: left;
+	width: 23px;
+	height: 23px;
+	margin: 0 2px;
+	color: #483E3D;
+	text-align: center;
+	text-decoration: none;
+	line-height: 23px;
+	background-image: url(images/slideshow-controls.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.WLBSlideShow a.SSSlideLinkHover {
+	background-position: -30px 0;
+}
+
+.WLBSlideShow a.SSSlideLinkSelected {
+	background-position: -90px 0;
+	color: #483E3D;
+}
+
+.WLBSlideShow a.SSSlideLinkDisabled {
+}
+
+.WLBSlideShow .story {
+	float: left;
+	overflow: hidden;
+	width: 355px;
+	height: 266px;
+	margin: 0;
+	padding: 0;
+	background-image: url(images/bkg-gradient.png);
+	background-position: top left;
+	background-repeat: repeat-x;
+	background-color: #8c716c;
+	border-left: solid 1px #554c49;
+	/*-moz-border-radius-topright: 7px;*/
+	-webkit-border-top-right-radius: 7px;
+}
+
+.WLBSlideShow .photo {
+	float: left;
+	overflow: hidden;
+	width: 415px;
+	margin: 0;
+	padding: 0;
+}
+
+.WLBSlideShow .photo img {
+	width: 425px;
+	height: 266px;
+	/* -moz-border-radius-topleft: 7px; */
+	-webkit-border-top-left-radius: 7px;
+	margin: 0;
+	padding: 0;
+}
+
+.WLBSlideShow .photo .caption {
+	margin: 0 6px;
+	line-height: 30px;
+	font-style: italic;
+}
+
+.WLBSlideShow .banner {
+	background-color: #491e16;
+	margin: 44px 0 0 11px;
+	padding: 10px;
+}
+
+.WLBSlideShow .title {
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+}
+
+.WLBSlideShow .subTitle {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+.WLBSlideShow .content {
+	margin: 0 10px 0 21px;
+}
+
+.WLBSlideShow .content button * {
+	display: block;
+	margin: 0;
+	height: 32px;
+	color: white;
+	font-size: 15px;
+}
+
+.WLBSlideShow .content button {
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	border-width: 0px;
+}
+
+.WLBSlideShow .content button span {
+	padding: 0 0 0 7px;
+	background: transparent url(images/button-left.png) top left no-repeat;
+}
+
+.WLBSlideShow .content button span span {
+	padding: 0 9px 0 0;
+	background: transparent url(images/button-right.png) top right no-repeat;
+}
+
+.WLBSlideShow .content button span span span {
+	padding: 0;
+	background: transparent url(images/button-center.png) top left repeat-x;
+	line-height: 28px;
+	white-space: nowrap;
+}
+
+.WLBSlideShow .content button:hover span,
+.WLBSlideShow .content button:hover span span span {
+	background-position: -33px left;
+}
+
+.WLBSlideShow .content button:hover span span {
+	background-position: -33px right;
+}
